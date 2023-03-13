@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+ ! Excerpted from "Programming WebRTC",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material,
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit https://pragprog.com/titles/ksrtc for more book information.
+-->
+<html lang="en">
+<head>
+  <title>Progamming WebRTC: Your Work</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <style>
+    html {
+      font-family: "Lucida Grande", Arial, sans-serif;
+      font-size: 1.125em;
+      line-height: 1.222em;
+    }
+    article {
+      margin: 0 auto;
+      max-width: 33em;
+    }
+    h1,h2 {
+      line-height: 1.2;
+    }
+    code {
+      display: inline-block;
+      background: #DDD;
+      padding: 0 0.306em;
+    }
+    b {
+      font-weight: normal;
+    }
+    .status {
+      padding: 1.222em;
+      border: 1px solid #4CAF50;
+      background: #C8E6C9;
+    }
+    .status.http {
+      border: 1px solid #FF9800;
+      background: #FFCC80;
+    }
+  </style>
+</head>
+<body>
+<body>
+<article>
+  <header id="header">
+    <h1>Progamming WebRTC: Your Work</h1>
+  </header>
+  <h2>Chat-App Starter Files</h2>
+  <p>
+    You’ll find the starter files for the basic chat example in the
+    <code>www/basic-p2p/</code> directory. As you build along with the book,
+    you’ll be able to reach that directory <b id="address">here</b>.
+  </p>
+  <h2>Multipeer Starter Files</h2>
+  <p>
+    Once you get to Chapter Six: Managing Multipeer Connections, you’ll work
+    with the starter peer-to-peer example in <code>www/multipeer/</code>,
+    which you’ll revise into a multipeer app over the course of the chapter.
+  </p>
+  <h2>If You Get Stuck...</h2>
+  <p>
+    Working with WebRTC is exciting, but it can be very challenging. Don’t
+    hesitate at any point to compare your work against the completed
+    examples in the <code>demos/</code> directory.
+  </p>
+  <p>
+    You’ll need to stop your server with <code>Ctrl + C</code> and then run
+    <code>npm run start:demos</code>, if you want to poke at the completed
+    examples in the browser.
+  </p>
+</article>
+
+<script>
+  let message = `Congratulations! You are successfully serving your work at ${ window.location.href}`
+  const header = document.querySelector('#header');
+  const address = document.querySelector('#address');
+  const chat_url = window.location.href + 'basic-p2p/';
+  const status = document.createElement('p');
+  status.className = 'status'
+  if (window.location.protocol === 'http:') {
+    status.classList.add('http');
+    message += ` <b>However, you’re connected over HTTP. Some WebRTC features may be unavailable.</b> See the setup instructions in Chapter One to generate and set up your self-signed SSL keys.`
+  }
+  address.innerHTML = `<a href="${ chat_url }">${ chat_url }</a>`;
+  status.innerHTML = message;
+  header.appendChild(status);
+</script>
+</body>
+</body>
+</html>

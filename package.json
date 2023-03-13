@@ -1,15 +1,14 @@
 {
-  "name": "webrtc-drills",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "test",
+  "source": "src/index.html",
+  "browerslist": "0> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel src/index.html --https",
+    "build": "parcel build src/index.html"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "main": "index.js",
+  "license": "MIT",
   "devDependencies": {
-    "parcel": "^2.8.3"
+    "parcel": "^2.1.0"
   }
 }

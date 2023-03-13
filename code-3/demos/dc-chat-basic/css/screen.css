@@ -1,0 +1,184 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* stylelint-disable */
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}.lint,html{line-height:1}.lint,body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/* stylelint-enable */
+
+/* Begin site styles below */
+
+html {
+  font-family: "Lucida Grande", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+/* Layout */
+
+* {
+  box-sizing: border-box;
+}
+#interface {
+  height: 100vh; /* TODO: Enhance with JS for mobile */
+  padding: 22px;
+  display: grid;
+  grid-gap: 11px;
+  grid-template-rows: auto auto 1fr; /* heading videos chatbox */
+}
+#header { /* Can discard this selector; superseded by grid-gap. */}
+
+#header > h1 {
+  margin-bottom: 11px;
+}
+
+.preserve-access {
+  position: absolute;
+  left: -20000px;
+}
+
+/* Forms and Controls */
+
+button,
+input {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  /* Box Styles */
+  display: block;
+  border: 0;
+  border-radius: 3px;
+  padding: 11px;
+}
+#call-button {
+  width: 143px; /* 6.5 typographic grid lines */
+  margin-right: 11px;
+}
+.join {
+  background-color: green;
+  color: white;
+}
+.leave {
+  background-color: #CA0;
+  color: black;
+}
+
+/* Chat Elements */
+
+#chat {
+  height: 100%;
+  min-height: 220px; /* Accomodate small, squarish screens */
+  border: 1px solid #999;
+  padding: 5.5px;
+
+  display: flex; /* Use columnar flexbox to constrain log */
+  flex-direction: column;
+
+  font-weight: normal;
+}
+#chat-log {
+  flex-grow: 1;
+  overflow: auto;
+  padding-bottom: 11px;
+  margin-bottom: 5.5px;
+  min-height: 0; /* Firefox fix */
+}
+#chat-log li {
+  border-radius: 5.5px;
+  padding: 5.5px;
+  margin-bottom: 5.5px;
+  max-width: 60%;
+  clear: both;
+}
+#chat-log .peer {
+  background: #EEE;
+  float: left;
+}
+#chat-log .self {
+  background: #009;
+  color: #EEE;
+  float: right;
+}
+#chat-form {
+  flex-grow: 0;
+  display: flex;
+}
+#chat-form button {
+  cursor: pointer;
+  flex: 0 0 auto;
+  background: #009;
+  color: #EEE;
+}
+#chat-form input {
+  flex: 1 1 100%;
+  padding: 9px;
+  margin-right: 5.5px;
+  border: 2px solid #999;
+  outline: 0;
+}
+
+/* Video Elements */
+
+#videos {
+  position: relative;
+}
+video {
+  background-color: #DDD;
+  display: block;
+  max-width: 100%;
+}
+#self {
+  width: 30%;
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  z-index: 1000; /* Prevent remote filters from hiding #self */
+  border: 1px solid #CCC;
+}
+.connected #self {
+  cursor: pointer;
+}
+
+/*  Video Effects */
+
+.filter-grayscale {
+  filter: grayscale(100%);
+}
+.filter-sepia {
+  filter: sepia(100%);
+}
+.filter-noir {
+  filter: grayscale(100%) contrast(300%) brightness(60%);
+}
+.filter-psychedelic {
+  filter: hue-rotate(180deg) saturate(400%) contrast(200%);
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 500px) {
+  #header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    justify-content: flex-end;
+  }
+  #header > * {
+    flex: 0 0 auto;
+  }
+  #header > h1 {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 680px) {
+  #interface {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  #header {
+    grid-column: 1 / 3;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "ksrtc-deploy",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Deployment example for Programming WebRTC: Build Real-Time Streaming Applications for the Web. Pragmatic Programmers, 2021.",
+  "author": "Karl Stolley <karl.stolley@gmail.com> (https://stolley.dev/)",
+  "homepage": "https://pragprog.com/titles/ksrtc/programming-webrtc/",
+  "bugs": {
+    "url": "https://forum.devtalk.com/c/community/pragprog-customers/85?tags=book-programming-webrtc",
+    "email": "karl.stolley@gmail.com"
+  },
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "PUBLIC=www DEBUG=signaling-server: node ./scripts/start-server"
+  },
+  "dependencies": {
+    "express": "~4.16",
+    "http-errors": "~1.6",
+    "morgan": "~1.9",
+    "socket.io": "~4.1"
+  }
+}

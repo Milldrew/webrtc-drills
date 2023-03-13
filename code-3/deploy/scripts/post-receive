@@ -1,0 +1,15 @@
+#! /usr/bin/env zsh
+
+WEB_ROOT=/var/www
+APP_DOMAIN=prag.webrtc.gallery
+
+GIT_REPO=$HOME/repos/$APP_DOMAIN.git
+TMP_GIT_CLONE=/tmp/$APP_DOMAIN
+DEPLOYED_APP=$WEB_ROOT/$APP_DOMAIN/app
+
+git clone $GIT_REPO $TMP_GIT_CLONE
+cd $TMP_GIT_CLONE
+npm install
+rm -rf $DEPLOYED_APP
+mv $TMP_GIT_CLONE $DEPLOYED_APP
+exit

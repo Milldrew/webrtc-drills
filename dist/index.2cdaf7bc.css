@@ -1,0 +1,65 @@
+:root {
+  --pastel-blue: #46afe3;
+  --pastel-yellow: #e3dd30;
+  --light-blue: #19a6ff;
+  --main-orange: #ff7e19;
+  --main-blue: #4319ff;
+  --main-green: #0f0;
+  --main-red: red;
+  --error: #e3192d;
+  --success: #12b312;
+  --warning: #fffc19;
+  --default-bright-gray: #e6e6e6;
+  --default-bright: #bfbfbf;
+  --default-dark-gray: gray;
+  --default-gray: gray;
+  --default-off-black: #404040;
+  --default-white: #fff;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+a:hover, button:hover {
+  color: pink;
+}
+
+* {
+  box-sizing: border-box;
+  background-color: var(--default-dark-gray);
+  color: var(--default-white);
+  margin: 0;
+  padding: 0;
+  font-family: PT Sans, sans-serif;
+}
+
+h1 {
+  letter-spacing: -1.5px;
+  font-size: 96px;
+  font-weight: 300;
+}
+
+h2 {
+  letter-spacing: -.5px;
+  font-size: 60px;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 48px;
+}
+
+h4 {
+  letter-spacing: .25px;
+  font-size: 34px;
+}
+
+p {
+  letter-spacing: .5px;
+  font-family: Playfair Display, serif;
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+/*# sourceMappingURL=index.2cdaf7bc.css.map */

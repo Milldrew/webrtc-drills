@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+ ! Excerpted from "Programming WebRTC",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material,
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit https://pragprog.com/titles/ksrtc for more book information.
+-->
+<html lang="en">
+<head>
+  <title>WebRTC Demo: User-Media Controls</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link rel="stylesheet" href="css/screen.css" />
+</head>
+<body>
+<main id="interface">
+  <header id="header">
+    <h1>Welcome</h1>
+    <button class="join" type="button" id="call-button">Join Call</button>
+  </header>
+  <article id="videos">
+    <h2 class="preserve-access">Streaming Videos</h2>
+    <video id="self"
+      autoplay
+      muted
+      playsinline
+      poster="img/placeholder.png">
+    </video>
+    <video id="peer"
+      autoplay
+      playsinline
+      poster="img/placeholder.png">
+    </video>
+    <p id="mic-status" aria-hidden="true">Remote peer is muted.</p>
+  </article>
+  <aside id="chat">
+    <h2 class="preserve-access">Text Chat</h2>
+    <ol id="chat-log"></ol>
+    <form id="chat-form" action="#null">
+      <label for="chat-msg" class="preserve-access">Compose Message</label>
+      <input type="text" id="chat-msg" name="chat-msg" autocomplete="off" />
+      <button type="submit" id="chat-btn">Send</button>
+    </form>
+  </aside>
+  <footer id="footer">
+    <button
+      aria-label="Toggle microphone"
+      role="switch"
+      aria-checked="true"
+      type="button"
+      id="toggle-mic">Mic</button>
+    <button
+      aria-label="Toggle camera"
+      role="switch"
+      aria-checked="true"
+      type="button"
+      id="toggle-cam">Cam</button>
+  </footer>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script
+  src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

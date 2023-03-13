@@ -1,0 +1,68 @@
+/*
+TODO
+Add signifiers affordances and clickability.
+clickability: curoser --> pointers
+button: hover animations
+anchor tag: animations
+*/
+:root {
+  --pastel-blue: #46AFE3;
+  --pastel-yellow: #E3DD30;
+  --light-blue: #19A6FF;
+  --main-orange: #ff7E19;
+  --main-blue: #4319FF;
+  --main-green: #00FF00;
+  --main-red: #FF0000;
+  --error: #E3192D;
+  --success: #12B312;
+  --warning: #FFFC19;
+  --default-bright-gray:#E6E6E6;
+  --default-bright:#BFBFBF;
+  --default-dark-gray:#808080;
+  --default-gray:#808080;
+  --default-off-black:#404040;
+  --default-white:#FFFFFF;
+}
+a, button {
+  cursor: pointer;
+}
+a:hover,
+button:hover {
+  color: pink;
+}
+
+* {
+  padding: 0 0;
+  margin: 0 0;
+  box-sizing: border-box;
+  background-color: var(--default-dark-gray);
+  color: var(--default-white);
+  font-family: 'PT Sans', Sans-Serif;
+}
+/* font-weight 400 is default */
+h1 {
+  font-size: 96px;
+  letter-spacing: -1.5px;
+  font-weight: 300;
+}
+h2 {
+  font-size: 60px;
+  letter-spacing: -0.5px;
+  font-weight: 300;
+}
+h3 {
+  font-size: 48px;
+}
+h4 {
+  font-size: 34px;
+  letter-spacing: .25px;
+}
+
+p {
+  Font-Family: 'Playfair Display', Serif;
+  Font-Size: 30px;
+  line-height: 1.5;  
+  letter-spacing: .5px;
+}
+
+

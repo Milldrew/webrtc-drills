@@ -1,0 +1,57 @@
+{
+  "settings": {
+    "_version": "Stolley Node.js Config, v. 3.0.1, 20210503",
+    "_eslint_version": "7.21.0",
+    "_rules_url": "https://eslint.org/docs/rules/",
+    "_repo_url": "https://github.com/karlstolley/eslint-config"
+  },
+  "parserOptions": {
+    "ecmaVersion": 11
+  },
+  "env": {
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "arrow-body-style": ["error", "as-needed"],
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+    "arrow-spacing": "warn",
+    "block-scoped-var": "warn",
+    "brace-style": ["warn", "1tbs"],
+    "callback-return": "error",
+    "comma-dangle": ["warn", "never"],
+    "comma-spacing": ["warn", { "before": false, "after": true }],
+    "curly": ["warn", "all"],
+    "dot-location": ["warn", "property"],
+    "dot-notation": "warn",
+    "eqeqeq": ["warn", "always"],
+    "func-call-spacing": "warn",
+    "handle-callback-err": "error",
+    "indent": ["warn", 2],
+    "linebreak-style": ["error", "unix"],
+    "multiline-comment-style": ["warn", "starred-block"],
+    "newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 2 }],
+    "no-confusing-arrow": "error",
+    "no-console": "off",
+    "no-mixed-requires": "warn",
+    "no-multi-spaces": ["warn", { "ignoreEOLComments": true, "exceptions": { "Property": true } }],
+    "no-path-concat": "error",
+    "no-sequences": "error",
+    "no-template-curly-in-string": "error",
+    "no-undef": "warn",
+    "no-undefined": "error",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+    "no-var": "error",
+    "prefer-rest-params": "error",
+    "prefer-template": "warn",
+    "quotes": ["warn", "single", { "allowTemplateLiterals": true }],
+    "require-await": "warn",
+    "semi": ["warn", "always"],
+    "semi-spacing": ["warn", {"before": false, "after": true}],
+    "spaced-comment": ["warn", "always"],
+    "strict": ["error", "global"],
+    "template-curly-spacing": ["warn", "never"],
+    "vars-on-top": "error",
+    "yoda": "error"
+  }
+}

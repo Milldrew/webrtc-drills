@@ -1,0 +1,40 @@
+{
+  "name": "ksrtc",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Supporting code for Programming WebRTC: Build Real-Time Streaming Applications for the Web. Pragmatic Programmers, 2021.",
+  "author": "Karl Stolley <karl.stolley@gmail.com> (https://stolley.dev/)",
+  "homepage": "https://pragprog.com/titles/ksrtc/programming-webrtc/",
+  "bugs": {
+    "url": "https://forum.devtalk.com/c/community/pragprog-customers/85?tags=book-programming-webrtc",
+    "email": "karl.stolley@gmail.com"
+  },
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "PUBLIC=www DEBUG=signaling-server: node ./scripts/start-server",
+    "start:demos": "PUBLIC=demos DEBUG=signaling-server: node ./scripts/start-server",
+    "ssl-keys": "openssl req -x509 -out $npm_config_keydir/localhost.crt -keyout $npm_config_keydir/localhost.key -newkey rsa:2048 -nodes -sha256 -days $npm_config_numdays -subj '/CN=localhost' -extensions EXT -config scripts/conf/self-signed.conf",
+    "lint": "npm run lint:node && npm run lint:js && npm run lint:css && npm run lint:html",
+    "lint:css": "npx stylelint \"**/*.css\" --config=scripts/conf/.stylelintrc",
+    "lint:html": "npx htmllint --rc=scripts/conf/.htmllintrc \"demos/**/*.html\" \"www/**/*.html\"",
+    "lint:js": "npx eslint -c scripts/conf/.eslint.browser.json --ignore-pattern \"demos/tests/*.js\" \"demos/**/*.js\" \"www/**/*.js\"",
+    "lint:node": "npx eslint -c scripts/conf/.eslint.node.json server.js scripts/start-server demos/tests",
+    "test:nw": "npx nightwatch -c scripts/conf/nightwatch.conf.js --fail-fast -e chromeActive,chromePassive --tag=$npm_config_tag",
+    "test:nwf": "npx nightwatch -c scripts/conf/nightwatch.conf.js -e chromeActive,firefoxPassive --tag=focus",
+    "test:nw:ff": "npx nightwatch -c scripts/conf/nightwatch.conf.js --fail-fast -e firefoxActive,firefoxPassive"
+  },
+  "dependencies": {
+    "express": "~4.16",
+    "http-errors": "~1.6",
+    "morgan": "~1.9",
+    "socket.io": "~4.5"
+  },
+  "devDependencies": {
+    "chromedriver": "^105.0.0",
+    "eslint": "^8.4.0",
+    "geckodriver": "^3.0",
+    "htmllint-cli": "^0.0.7",
+    "nightwatch": "^2.0",
+    "stylelint": "^13.13.1"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+ ! Excerpted from "Programming WebRTC",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material,
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit https://pragprog.com/titles/ksrtc for more book information.
+-->
+<html lang="en">
+<head>
+  <title>WebRTC Demo: Multipeer Video Call</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link rel="stylesheet" href="css/screen.css" />
+</head>
+<body>
+<main id="interface">
+  <header id="header">
+    <h1>Welcome</h1>
+    <button class="join" type="button" id="call-button">Join Call</button>
+  </header>
+<article id="videos">
+  <h2 class="preserve-access">Streaming Videos</h2>
+  <figure id="self">
+    <video
+      autoplay
+      muted
+      playsinline
+      poster="img/placeholder.png">
+    </video>
+    <figcaption>
+      <form id="username-form" action="#null">
+        <label for="username-input" class="preserve-access">Username</label>
+        <input type="text" id="username-input" placeholder="Username" />
+        <button type="submit" id="username-set-btn">Set Username</button>
+      </form>
+    </figcaption>
+  </figure>
+</article>
+  <footer id="footer">
+    <button
+      aria-label="Toggle microphone"
+      role="switch"
+      aria-checked="true"
+      type="button"
+      id="toggle-mic">Mic</button>
+    <button
+      aria-label="Toggle camera"
+      role="switch"
+      aria-checked="true"
+      type="button"
+      id="toggle-cam">Cam</button>
+  </footer>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script
+  src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
