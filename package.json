@@ -1,14 +1,15 @@
 {
-  "name": "test",
-  "source": "src/index.html",
-  "browerslist": "0> 0.5%, last 2 versions, not dead",
-  "scripts": {
-    "dev": "parcel src/index.html --https",
-    "build": "parcel build src/index.html"
-  },
+  "name": "webrtc-drills",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "parcel": "^2.1.0"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/cli": "^9.2.0"
   }
 }
